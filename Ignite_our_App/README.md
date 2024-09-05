@@ -77,3 +77,16 @@ A: A framework is a set of pre-written code that provides a structure for develo
 A `library` is a collection of packages that perform specific operations whereas a `framework` contains the basic flow and architecture of an application. The major difference between them is the complexity. Libraries contain a number of methods that a developer can just call whenever they write code. React js is library and Angular is Framework.
 
 The `framework` provides the flow of a software application and tells the developer what it needs and calls the code provided by the developer as required. If a `library` is used, the application calls the code from the library.
+
+## Q: What is JSX?
+A: JSX is a collection of javascript and html . its html like syntax. We can write javascript in it.
+ `Babel` converts the JSX code into the `ReactElement` and parcel convert it to `HTML Element`.
+
+## Q: `React Component` ?
+A: `Class based component` & `Functional component`
+
+## Q: What is a `Functional component`?
+A: A `Functional component` is a normal javscript function that returns some piece of JSX code or we can say returns one or more react element.
+
+## Q: What is `Component composition`?
+A: Component inside another component is called `Component composition`.

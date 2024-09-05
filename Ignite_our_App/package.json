@@ -4,6 +4,8 @@
   "description": "its my program to ignite app",
   "main": "app.js",
   "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
     "test": ""
   },
   "author": "",
