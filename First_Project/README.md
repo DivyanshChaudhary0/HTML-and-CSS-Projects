@@ -83,10 +83,35 @@ A: JSX is a collection of javascript and html . its html like syntax. We can wri
  `Babel` converts the JSX code into the `ReactElement` and parcel convert it to `HTML Element`.
 
 ## Q: `React Component` ?
-A: `Class based component` & `Functional component`
+A: Components are one of the core concepts of React. They are the foundation upon which you build user interfaces (UI), which makes them the perfect place to start your React journey!
+"Two types of components in react"
+`Class based component`
+`Functional component`
 
 ## Q: What is a `Functional component`?
 A: A `Functional component` is a normal javscript function that returns some piece of JSX code or we can say returns one or more react element.
+
+### _Syntax_
+
+```
+import {LOGO_URL} from "../utils/constant"
+
+function Header(){
+    return <div className="w-full h-20 bg-red-300 flex items-center justify-between px-20">
+        <div>
+            <img src={ LOGO_URL } alt="" className="w-16 rounded-full object-cover object-center" />
+        </div>
+        <div className="flex items-center gap-20">
+            <p>Home</p>
+            <p>About US</p>
+            <p>Contact</p>
+            <p>Cart</p>
+        </div>
+    </div>
+}
+
+export default Header;
+```
 
 ## Q: What is `Component composition`?
 A: Component inside another component is called `Component composition`.
