@@ -2,7 +2,7 @@
   "name": "ignite_our_app",
   "version": "1.0.0",
   "description": "its my program to ignite app",
-  "main": "app.js",
+  "main": "main.js",
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html",

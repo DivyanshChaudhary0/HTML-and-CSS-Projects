@@ -3,34 +3,30 @@
 import React, { useEffect, useState } from 'react'
 import { BASE_URL } from '../utils/constant';
 
-const RestaurantCard = () => {
-
-    const [allData,setAllData] = useState([]);
+const ResCards = () => {
+    
     const [resData,setResData] = useState([]);
     const [inputData,setInputData] = useState("");
 
 
     const btnClick = ()=>{
-      const filteredData = allData.filter((value) => value.description.toLocaleLowerCase().includes(inputData.toLocaleLowerCase()));
-      setResData(filteredData);
+       const filteredData = resData.filter((value) => value.description.toLocaleLowerCase().includes(inputData));
+        setResData(filteredData);
     }
     
     useEffect(()=>{
         fetchData();
-        setResData(allData);
     },[]);
 
     const fetchData = async ()=>{
        const res = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.99740&lng=79.00110&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
        const data = await res.json();
-       setAllData(data?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle?.info);
        setResData(data?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle?.info);
     }
-
     console.log(resData);
 
-  return ( 
-        <div>
+  return (
+    <div>
         <div className="p-4">
             <input type="text" className="border border-black rounded-lg px-4 py-2" value={inputData} onChange={(e)=>setInputData(e.target.value)} />
             <button className="px-10 py-2 border border-black rounded-lg mx-2" onClick={btnClick}>Search</button>
@@ -54,4 +50,4 @@ const RestaurantCard = () => {
   )
 }
 
-export default RestaurantCard;
+export default ResCards;
