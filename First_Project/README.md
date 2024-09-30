@@ -82,6 +82,16 @@ The `framework` provides the flow of a software application and tells the develo
 A: JSX is a collection of javascript and html . its html like syntax. We can write javascript in it.
  `Babel` converts the JSX code into the `ReactElement` and parcel convert it to `HTML Element`.
 
+### Syntax 
+```
+const JSX = () => {
+  return (
+    <div>{ 16*2==8 ? "Jaat" : "Jaat" } HUI HUI GUYS </div>
+  )
+}
+
+```
+
 ## Q: `React Component` ?
 A: Components are one of the core concepts of React. They are the foundation upon which you build user interfaces (UI), which makes them the perfect place to start your React journey!
 "Two types of components in react"
@@ -115,3 +125,85 @@ export default Header;
 
 ## Q: What is `Component composition`?
 A: Component inside another component is called `Component composition`.
+
+## Q: What is `Config driven UI`?
+A: Contolling the UI by a config file thats coming from backend.
+
+## Q: Types of `import/export`?
+A: There are two types of import/export.
+`Default export`
+ ### Syntax
+ ```
+    export default Header;
+
+    import Header from "./components/Header"
+ ```
+
+`Named export`
+### Syntax
+ ```
+    export const Header = ()=>{
+        return (
+            <div>Jaat hi kahde</div>
+        )
+    };
+
+    import { Header } from "./components/Header"
+ ```
+
+## Q: Some key notes for building any application?
+A:  (1) Before making any application planning is required.
+    (2) Dont use index as a key in a loop.
+    (3) The job of a library and a framework is to give the environment and do a lot in very less code in the UI.
+    (4) React and all other frameworks are solving same problem that if the data changes than the UI changes [ sync the UI with the data layer ].
+
+## Q: What are `Props`?
+A: Props are just normal arguments pass to a function. it is used to pass data from parent to child component .
+
+## Q: What is `Prop-driling`?
+A: Prop drilling, also known as "threading props" or "component chaining," refers to the process of passing data from a parent component down to nested child components through props.
+
+Prop drilling occurs when a prop needs to be passed through several layers of nested components to reach a deeply nested child component that actually needs the prop. Each intermediary component in the hierarchy has to pass the prop down, even if it doesn't use the prop itself.
+
+```
+// ParentComponent.js
+import React from 'react';
+import ChildComponent from './ChildComponent';
+
+function ParentComponent() {
+  const data = 'Hello from Parent';
+
+  return (
+    <div>
+      <ChildComponent data={data} />
+    </div>
+  );
+}
+
+export default ParentComponent;
+```
+```
+// ChildComponent.js
+import React from 'react';
+import GrandchildComponent from './GrandchildComponent';
+
+function ChildComponent(props) {
+  return (
+    <div>
+      <GrandchildComponent data={props.data} />
+    </div>
+  );
+}
+
+export default ChildComponent;
+```
+```
+// GrandchildComponent.js
+import React from 'react';
+
+function GrandchildComponent(props) {
+  return <div>{props.data}</div>;
+}
+
+export default GrandchildComponent;
+```
