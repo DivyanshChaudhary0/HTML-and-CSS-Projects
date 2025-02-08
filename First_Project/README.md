@@ -207,3 +207,11 @@ function GrandchildComponent(props) {
 
 export default GrandchildComponent;
 ```
+## Q: What are hooks?
+A: Hooks are basically a javascript utility functions.
+Hooks allow us to "hook" into React features such as state and lifecycle methods.
+`State`=> State is a javascript object that holds some information of component that may be change overtime. Whenever the state of an object changes react re-rendres the component.
+
+## Q: What is useState?
+A: To control the state we use usestate.
+ 

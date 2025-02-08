@@ -25,8 +25,8 @@ const RestaurantCard = () => {
        const data = await res.json();
        setAllData(data?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle?.info);
        setResData(data?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle?.info);
+       console.log(data);
     }
-
     console.log(resData);
 
   return ( 
